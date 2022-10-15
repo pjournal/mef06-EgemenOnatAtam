@@ -1,6 +1,10 @@
 ---
 title: "Assignment 1"
-date: "2022-10-01"
+output:
+  html_document:
+    theme: cerulean
+    toc: true
+date: "`r Sys.Date()`"
 ---
 
 ## About me
@@ -20,6 +24,7 @@ In this talk Hannah explain why we should automate. She starts with showing us w
 ### Advantages of Using R for Data Science
 
 Post is about Advantages of Using R for Data science and mention these advantages. There are 5 advantages below:
+
 1. Free and Open Source
 2. Extensive support for statistical modelling
 3. Extremely easy data wrangling
