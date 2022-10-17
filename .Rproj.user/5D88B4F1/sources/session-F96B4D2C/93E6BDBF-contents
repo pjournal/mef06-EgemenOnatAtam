@@ -16,15 +16,17 @@ Hello, my name is Egemen Onat Atam. I graduated from Business and Law department
 
 ## Rstudio Global 
 
-In this talk Hannah explain why we should automate. She starts with showing us workflows that one with reactionary workflow and one with automated workflow to elaborate the differences. After that she tell us pros of automation; reproducibility, saves time, less human interaction means less errors. The presentation continued by giving examples about real life automation solutions and discuss about pros and cons. 
+In this talk Hannah explain why we should automate. She starts with showing us workflows that one with reactionary workflow and one with automated workflow to elaborate the differences. After that she tell us pros of automation; reproducibility, saves time, less human interaction means less errors.Then tells us she love using officer.A R package that lets R users manipulate Word (.docx) and PowerPoint (*.pptx) documents. In short, one can add images,tables and text into documents from R.The reason she mention this package because she believe that automation can start on a small scale and officer in a way automate some process.
+![]()
+
+The presentation continued by giving example about real life automation solution for ProUCL.The automation is a simple clicking for you automation. It can be sound silly and unnecessary but it long run it saves time .After that they  discuss about pros and cons of this particular automation.
 
 
 [Link](https://www.rstudio.com/conference/2022/talks/advocating-for-automation/)
 
 
-![](https://raw.githubusercontent.com/pjournal/mef06-EgemenOnatAtam/main/Pic/0_vm73-IJ_kUXRjjnA.jpeg)
-
 ## Advantages of Using R for Data Science
+
 
 Post is about Advantages of Using R for Data science and mention these advantages. There are 5 advantages below:
 
@@ -34,17 +36,17 @@ Post is about Advantages of Using R for Data science and mention these advantage
 4. The connection with NoSQL databases
 5. Advanced visualizations
 
-[Link](https://sarose-parajuli.medium.com/advantages-of-using-r-for-data-science-37cffe1197cf)
+[![](https://raw.githubusercontent.com/pjournal/mef06-EgemenOnatAtam/main/Pic/adv%20of%20r.jpeg)](https://sarose-parajuli.medium.com/advantages-of-using-r-for-data-science-37cffe1197cf)
 
-![](https://raw.githubusercontent.com/pjournal/mef06-EgemenOnatAtam/main/Pic/Python%20vs.%20R%20In%20Data%20Science%20%26%20Machine%20Learning.jpeg)
 
 ## Python vs. R In Data Science & Machine Learning
 
 In article there is a comparison between R and Python. It starts with differences between them.  Then switch to similarities. These differences and similarities are mainly in syntax, libraries, and community support. 
-After finishing comparison article asks and answers this question, which one should we learn to become a data scientist?  It tells us the choosing between R and Python depends to our programming skills. Also, it depends which type of data science we want. If we want to focus more on machine learning R is more suitable. İF we want to become Excel Wizz then python is our language.
+After finishing comparison article asks and answers this question, which one should we learn to become a data scientist?  It tells us the choosing between R and Python depends to our programming skills. Also, it depends which type of data science we want. If we want to focus more on machine learning R is more suitable. If we want to become Excel Wizz then python is our language.
 Towards the end of the article, the use of two programming languages in the field of artificial intelligence is mentioned.
 
-[Link](https://ashley-mangtani.medium.com/python-vs-r-in-data-science-machine-learning-16dc90e0f500)
+
+[![](https://raw.githubusercontent.com/pjournal/mef06-EgemenOnatAtam/main/Pic/Python%20vs.%20R%20In%20Data%20Science%20%26%20Machine%20Learning.jpeg)](https://ashley-mangtani.medium.com/python-vs-r-in-data-science-machine-learning-16dc90e0f500)
 
 ## 20 Useful R Packages You May Not Know About
 
@@ -66,6 +68,7 @@ I will shortly explain one of packages/add-ins for each area that I find most us
 
 ### Reading Data - datapasta
 Datapasta allows you to copy-and-paste any HTML or Excel Tables into R.
+
 ![](https://raw.githubusercontent.com/pjournal/mef06-EgemenOnatAtam/main/Pic/datapasta.gif)
 
 ### Data cleaning - skimr
@@ -77,12 +80,16 @@ Skimr can quickly create summary statistics of a data frame. It extends beyond t
 You can quickly create tables with results of univariate analyses, stratified by categorical variable groups using the package.
 
 ![](https://raw.githubusercontent.com/pjournal/mef06-EgemenOnatAtam/main/Pic/compareGroups.png)
+
 ### Data Visualization - esquisse add-in
+
 You can create plots by dragging and dropping.
+
 ![](https://raw.githubusercontent.com/pjournal/mef06-EgemenOnatAtam/main/Pic/esquisse%20add-in.gif)
 
 ### Misc - emo
 The package allows users to easily insert emoji into RMarkdown.
+
 ![](https://raw.githubusercontent.com/pjournal/mef06-EgemenOnatAtam/main/Pic/emo.png)
 
 [Link](https://medium.com/@jchen001/20-useful-r-packages-you-may-not-know-about-54d57fe604f3)

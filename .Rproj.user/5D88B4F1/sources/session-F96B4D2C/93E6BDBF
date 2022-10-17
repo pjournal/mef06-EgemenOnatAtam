@@ -3,7 +3,7 @@
     "path": "~/GitHub/mef06-EgemenOnatAtam/assignment1.qmd",
     "project_path": "assignment1.qmd",
     "type": "quarto_markdown",
-    "hash": "1861882444",
+    "hash": "213226165",
     "contents": "",
     "dirty": false,
     "created": 1666042705671.0,
@@ -12,8 +12,8 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "48,2",
-        "scrollLine": "39",
+        "cursorPosition": "21,292",
+        "scrollLine": "15",
         "rmdVisualMode": "false",
         "rmdVisualCollapsedChunks": "",
         "rmdVisualModeLocation": "2:0",
@@ -22,11 +22,11 @@
         "last_setup_crc32": "F96B4D2C70098130"
     },
     "folds": "",
-    "lastKnownWriteTime": 1666046478,
+    "lastKnownWriteTime": 1666048315,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1666046479001,
+    "last_content_update": 1666048315031,
     "read_only": false,
     "read_only_alternatives": []
 }
