@@ -51,7 +51,7 @@ Towards the end of the article, the use of two programming languages in the fiel
 ## 20 Useful R Packages You May Not Know About
 
 The packages/add-ins that this article covers below:
-```{r}
+```{r, echo = FALSE}
 library(knitr)
 Reading_data<-c("datapasta", "vroom", "rio","","","")
 Data_cleaning<-c("naniar", "skimr", "janitor", "sqldf", "reticulate","")
