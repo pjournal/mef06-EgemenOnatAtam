@@ -50,7 +50,7 @@ Towards the end of the article, the use of two programming languages in the fiel
 
 ### 20 Useful R Packages You May Not Know About
 
-The packages/add-ins cover in this article:
+The packages/add-ins that this article covers below:
 ```{r}
 library(knitr)
 Reading_data<-c("datapasta", "vroom", "rio","","","")
@@ -63,6 +63,13 @@ packages<-data.frame(Reading_data,Data_cleaning,Data_analysis,Data_visualization
 knitr::kable(packages,"pipe",
 col.names=c("Reading data","Data cleaning","Data analysis","Data visualization","Misc"), align=c("ccccc"))
 ```
+
+I will shortly explain one of packages/add-ins for each area that I find most useful or most entertaining, otherwise I thought it would be too long.
+
+###datapasta
+Datapasta allows you to copy-and-paste any HTML or Excel Tables into R.
+
+
 
 [Link](https://medium.com/@jchen001/20-useful-r-packages-you-may-not-know-about-54d57fe604f3)
 
