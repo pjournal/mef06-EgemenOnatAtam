@@ -16,7 +16,7 @@ Hello, my name is Egemen Onat Atam. I graduated from Business and Law department
 
 [My Linkedin](https://www.linkedin.com/in/egemenatam)
 
-## Rstudio Global 
+## Rstudio Global - Advocating for Automation: Adapting Current Tools in Environmental Science through R
 
 In this talk Hannah explain why we should automate. She starts with showing us workflows that one with reactionary workflow and one with automated workflow to elaborate the differences. After that she tell us pros of automation; reproducibility, saves time, less human interaction means less errors.Then tells us she love using officer.A R package that lets R users manipulate Word (.docx) and PowerPoint (*.pptx) documents. In short, one can add images,tables and text into documents from R.The reason she mention this package because she believe that automation can start on a small scale and officer in a way automate some process.
 ![](https://raw.githubusercontent.com/pjournal/mef06-EgemenOnatAtam/main/Pic/officer.JPG)
