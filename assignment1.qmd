@@ -1,5 +1,5 @@
 ---
-title: "Assignment 1"
+title: "R Markdown Homework"
 output:
   html_document:
     theme: cerulean
@@ -13,6 +13,8 @@ knitr::opts_chunk$set(fig.align = 'center', echo = TRUE)
 
 ## About me
 Hello, my name is Egemen Onat Atam. I graduated from Business and Law departments of MEF University. After working as a lawyer for a while, I resigned about 2 months ago. At that time, my master's application was finalized and I wanted to give my full focus to this department. I want to develop myself further by synthesizing the competencies I already have with the achievements I will gained in this program. For instance, Data science, machine learning and big data analysis can be and will be beneficial in the field of law. Although the legal sector has difficulties in adopting a new technology and integrating it with them, it will not be able to escape from digitalization sooner or later. As a matter of fact, the data created by the legal system is increasing and digitizing day by day, and we see that case decisions and case-laws are now transmitted and stored electronically, especially with the UYAP (National Judicial Network Information System). Also, such matchups of attorneys with machine learning, big data, and analytics offer a potent combination that may help law firms better and more effectively serve their clients while also figuring out methods to set themselves apart from rivals, do a better job of keeping clients, and bring in new ones. While this change is taking place, I want to be a part of this process with the competencies that this program has given me.
+
+[My Linkedin](www.linkedin.com/in/egemenatam)
 
 ## Rstudio Global 
 
