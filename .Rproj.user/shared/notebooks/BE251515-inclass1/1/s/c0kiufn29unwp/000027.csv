@@ -1,0 +1,10 @@
+"1","[1m[33mError[39m in `arrange()`:[22m
+[38;5;232m[33m![38;5;232m Problem with the implicit `transmute()` step.
+[31m✖[38;5;232m Problem while computing `..1 = Freq`.[39m
+[1mCaused by error in `mask$eval_all_mutate()`:[22m
+[33m![39m object 'Freq' not found
+Backtrace:
+[90m  1. [39m... %>% arrange(desc(Freq))
+[90m 11. [39m[1mbase[22m::.handleSimpleError(`<fn>`, ""object 'Freq' not found"", base::quote(mask$eval_all_mutate(quo)))
+[90m 12. [39m[1mdplyr[22m (local) h(simpleError(msg, call))
+"

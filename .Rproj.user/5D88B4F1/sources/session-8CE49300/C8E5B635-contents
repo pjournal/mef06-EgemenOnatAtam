@@ -1,0 +1,17 @@
+library(tidyverse) #tidyverse is a package group which includes dplyr as well
+library(lubridate)
+filename <- file.choose("rp_201801_202005_df.rds")
+raw_df <- readRDS(filename)
+print(raw_df,n=3)
+raw_df %>% glimpse()
+options(tibble.print_max = 3, tibble.print_min = 3)
+raw_df %>% select(dt,wind_lic)
+select(raw_df,dt,wind_lic)
+raw_df %>% rename(date_time = dt)
+raw_df %>% select(date_time=dt,wind_lic:others_lic)
+raw_df %>% select(-starts_with("wind_")) 
+raw_df %>% select(dt,starts_with("sun_"),starts_with("wind")) %>% relocate(wind_lic,.before=sun_ul)
+raw_df %>% select(dt,starts_with("sun_"),starts_with("wind")) %>% relocate(wind_lic)
+raw_df %>% select(dt,starts_with("sun_"),starts_with("wind")) %>% relocate(dt,.after=last_col()
+raw_df %>% rename_with(~gsub("Type","_type",.),contains("Type")) %>% glimpse()
+lubridate::year

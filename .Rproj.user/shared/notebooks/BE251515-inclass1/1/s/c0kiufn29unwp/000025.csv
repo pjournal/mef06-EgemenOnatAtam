@@ -1,0 +1,2 @@
+"0","planes %>% group_by(manufacturer) %>% summarize(""seats in total""=sum(seats)) %>% print(n = 35) %>% "
+"0","        arrange(desc(Freq))"

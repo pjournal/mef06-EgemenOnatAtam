@@ -1,0 +1,43 @@
+---
+title: "Inclass1"
+output: html_document
+date: "2022-10-19"
+---
+
+```{r}
+library(tidyverse)
+library(nycflights13)
+library(lubridate)
+library(dplyr)
+```
+
+
+### Distribution of planes by year of manufacture and their manufacturers
+First I find the range of production years to know where to start and where to end. Also to avoid NA I use `is.finite` function while finding max and min numbers. 
+```{r}
+max(planes$year[is.finite(planes$year)])
+min(planes$year[is.finite(planes$year)])
+planes %>% group_by(year = cut(year,breaks=c(1950,1955,1960,1965,1970,1975,1980,1985,1990,1995,2000,2005,2010,2015),include.lowest = TRUE)) %>% summarise("plane count" = n()) 
+planes %>% filter(year > 1955 & year <= 1960) %>% count(manufacturer)
+planes %>% filter(year > 1960 & year <= 1965) %>% count(manufacturer)
+planes %>% filter(year > 1965 & year <= 1970) %>% count(manufacturer)
+planes %>% filter(year > 1970 & year <= 1975) %>% count(manufacturer)
+planes %>% filter(year > 1975 & year <= 1980) %>% count(manufacturer)
+planes %>% filter(year > 1980 & year <= 1985) %>% count(manufacturer)
+planes %>% filter(year > 1985 & year <= 1990) %>% count(manufacturer)
+planes %>% filter(year > 1990 & year <= 1995) %>% count(manufacturer)
+planes %>% filter(year > 1995 & year <= 2000) %>% count(manufacturer)
+planes %>% filter(year > 2000 & year <= 2005) %>% count(manufacturer)
+planes %>% filter(year > 2005 & year <= 2010) %>% count(manufacturer)
+planes %>% filter(year > 2010 & year <= 2015) %>% count(manufacturer)
+```
+
+
+
+### Total capacity of manufacturers
+I add all aircrafts from the same manufacturer to find total capacity of that manufacturer's planes.
+```{r}
+planes %>% group_by(manufacturer) %>% summarize("seats in total"=sum(seats)) %>% print(n = 35) 
+
+```
+
