@@ -3,12 +3,19 @@ title: "deneme"
 output: html_document
 date: "2022-11-05"
 ---
-
+```{r}
+library(readxl)
+url <- "https://github.com/berkorbay/datasets/raw/master/startup_deals/startup_deals_2021.xlsx"
+destfile <- "sd21.xlsx"
+curl::curl_download(url, destfile)
+sd21 <- read_excel(destfile)
+```
 ```{r}
 "Group Assignment: Startup Deals"
 library(dplyr)
 library(tidyverse)
 library(scales)
+
 "Kim kaç defa yatırım yapmış"
 sd21 %>%group_by(Investor)%>%
   summarize(count=n()) %>%

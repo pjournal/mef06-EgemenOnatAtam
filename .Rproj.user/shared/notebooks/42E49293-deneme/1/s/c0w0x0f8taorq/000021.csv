@@ -1,2 +1,0 @@
-"0",""
-"0","sd21 %>% group_by(`Investment Stage`) %>% summarize(mean = mean(`Stake (%)`,na.rm=TRUE))"
