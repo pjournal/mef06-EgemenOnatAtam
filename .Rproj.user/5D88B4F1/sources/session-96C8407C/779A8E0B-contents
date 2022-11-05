@@ -56,7 +56,7 @@ unique(financial_investor)
 
 ggplot(sd21, aes(`Investment Stage`, fill = `Financial Investor`)) + 
 geom_bar(position = "fill") +
-labs(x="İnvestment stage", y=NULL) +
+labs(x="İnvestment Stage", y=NULL) +
 coord_flip()
 ```
 
