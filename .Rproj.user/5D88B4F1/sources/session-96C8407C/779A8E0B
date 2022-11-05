@@ -1,9 +1,9 @@
 {
     "id": "779A8E0B",
-    "path": "~/GitHub/mef06-EgemenOnatAtam/grup_denemesi.qmd",
-    "project_path": "grup_denemesi.qmd",
+    "path": "~/GitHub/mef06-EgemenOnatAtam/deneme.qmd",
+    "project_path": "deneme.qmd",
     "type": "quarto_markdown",
-    "hash": "0",
+    "hash": "1262000969",
     "contents": "",
     "dirty": false,
     "created": 1667642911848.0,
@@ -13,15 +13,15 @@
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "34,0",
-        "scrollLine": "27"
+        "cursorPosition": "1,14",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1667643977,
+    "lastKnownWriteTime": 1667644245,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1667643977209,
+    "last_content_update": 1667644245163,
     "read_only": false,
     "read_only_alternatives": []
 }
