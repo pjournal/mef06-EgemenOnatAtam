@@ -1,15 +1,18 @@
+---
+title: "grup deneme"
+output: html_document
+date: "2022-11-05"
+---
+
+```{r}
 "Group Assignment: Startup Deals"
-install.packages("tidyverse")
-install.packages("readxl")
 library(dplyr)
 library(tidyverse)
 library(scales)
-sd21 <- read_excel("C:/Users/USER/Downloads/startup_deals_2021.xlsx")
 "Kim kaç defa yatırım yapmış"
 sd21 %>%group_by(Investor)%>%
   summarize(count=n()) %>%
   arrange(desc(count))
-
 "investor yapanlar nereli"
 sd21 %>%group_by(`Investor's Origin`)%>%
   summarize(count=n()) %>%
@@ -48,6 +51,6 @@ ggplot(sd21, aes(`Investment Stage`, fill = `Financial Investor`)) +
 geom_bar(position = "fill") +
 labs(x="Hair Color", y=NULL) +
 coord_flip()
-
+```
 
 
