@@ -1,0 +1,3 @@
+"0","sd21 %>%group_by(`Investor's Origin`)%>%"
+"0","  summarize(sum =sum(`Deal Value (USD)`,na.rm = TRUE),count=n()) %>%"
+"0","  arrange(desc(count))"

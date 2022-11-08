@@ -287,13 +287,23 @@ The following object is masked from 'package:readr':
 
     col_factor</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="st">"Kim kaç defa yatırım yapmış"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>sd21 <span class="ot">&lt;-</span> sd21 <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="st">`</span><span class="at">Deal Value (USD)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="st">`</span><span class="at">Deal Value (USD)</span><span class="st">`</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in mask$eval_all_mutate(quo): NAs introduced by coercion</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sd21<span class="sc">$</span><span class="st">`</span><span class="at">Stake (%)</span><span class="st">`</span><span class="ot">&lt;-</span> <span class="fu">str_remove</span>(sd21<span class="sc">$</span><span class="st">`</span><span class="at">Stake (%)</span><span class="st">`</span>, <span class="at">pattern =</span> <span class="st">"%"</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>sd21 <span class="ot">&lt;-</span> sd21 <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="st">`</span><span class="at">Stake (%)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="st">`</span><span class="at">Stake (%)</span><span class="st">`</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in mask$eval_all_mutate(quo): NAs introduced by coercion</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="st">"Kim kaç defa yatırım yapmış"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Kim kaç defa yatırım yapmış"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sd21 <span class="sc">%&gt;%</span><span class="fu">group_by</span>(Investor)<span class="sc">%&gt;%</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>sd21 <span class="sc">%&gt;%</span><span class="fu">group_by</span>(Investor)<span class="sc">%&gt;%</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 221 × 2
    Investor                                         count
@@ -310,13 +320,32 @@ The following object is masked from 'package:readr':
 10 Alesta Yatırım, Sertaç Özinal (Private Investor)     3
 # … with 211 more rows</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="st">"investor yapanlar nereli"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>sd21 <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Investor)<span class="sc">%&gt;%</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">sum =</span><span class="fu">sum</span>(<span class="st">`</span><span class="at">Deal Value (USD)</span><span class="st">`</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(sum))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 221 × 2
+   Investor                                                                  sum
+   &lt;chr&gt;                                                                   &lt;dbl&gt;
+ 1 Softbank, General Atlantic, Princeville Capital, ADO, Qatar Investmen… 1.44e9
+ 2 IPO Investors                                                          7.61e8
+ 3 Silver Lake Partners, Sequoia Capital, Tiger Global Management, Goodw… 5.55e8
+ 4 Sequoia Capital, Tiger Global Management, Base Capital Partners, Cran… 3   e8
+ 5 Kora, Institutional Venture Partners, Makers Fund, Balderton Capital,… 1.55e8
+ 6 Base Partners, Crankstart Foundation, Goodwater Capital, Tiger Global… 1.28e8
+ 7 Undisclosed Existing Investors                                         3.5 e7
+ 8 Actera Group, Esas Holding                                             3   e7
+ 9 Arkance SAS                                                            3   e7
+10 Brisa                                                                  2.06e7
+# … with 211 more rows</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="st">"investor yapanlar nereli"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "investor yapanlar nereli"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>sd21 <span class="sc">%&gt;%</span><span class="fu">group_by</span>(<span class="st">`</span><span class="at">Investor's Origin</span><span class="st">`</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>sd21 <span class="sc">%&gt;%</span><span class="fu">group_by</span>(<span class="st">`</span><span class="at">Investor's Origin</span><span class="st">`</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 38 × 2
    `Investor's Origin` count
@@ -333,27 +362,107 @@ The following object is masked from 'package:readr':
 10 Turkey, USA             2
 # … with 28 more rows</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="st">"investment aşamalarının dağılımı ve grafiği"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="st">"investor yapanlar ne kadar ve nereli"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "investor yapanlar ne kadar ve nereli"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>sd21 <span class="sc">%&gt;%</span><span class="fu">group_by</span>(<span class="st">`</span><span class="at">Investor's Origin</span><span class="st">`</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">sum =</span><span class="fu">sum</span>(<span class="st">`</span><span class="at">Deal Value (USD)</span><span class="st">`</span>),<span class="at">count=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(sum))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 38 × 3
+   `Investor's Origin`                 sum count
+   &lt;chr&gt;                             &lt;dbl&gt; &lt;int&gt;
+ 1 "USA, Qatar, UAE, \r\nJapan" 1435000000     1
+ 2 "USA"                        1076423346    11
+ 3 "USA, UAE"                    555000000     1
+ 4 "USA, UK"                     167000000     2
+ 5 "USA, Brazil, Turkey"         128000000     1
+ 6 "UK"                           52307000     6
+ 7 "NA"                           35000000     1
+ 8 "France"                       32000000     2
+ 9 "Turkey, Belgium, USA"         20000000     1
+10 "Finland"                      10000000     1
+# … with 28 more rows</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>sd21 <span class="sc">%&gt;%</span><span class="fu">group_by</span>(<span class="st">`</span><span class="at">Investor's Origin</span><span class="st">`</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">sum =</span><span class="fu">sum</span>(<span class="st">`</span><span class="at">Deal Value (USD)</span><span class="st">`</span>,<span class="at">na.rm =</span> <span class="cn">TRUE</span>),<span class="at">count=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 38 × 3
+   `Investor's Origin`         sum count
+   &lt;chr&gt;                     &lt;dbl&gt; &lt;int&gt;
+ 1 Turkey               210986754.   235
+ 2 USA                 1076423346     11
+ 3 UK                    52307000      6
+ 4 France                32000000      2
+ 5 Germany                5100000      2
+ 6 India                  3050000      2
+ 7 Netherlands            5800000      2
+ 8 Qatar, Turkey          1140000      2
+ 9 Turkey, Estonia         830000      2
+10 Turkey, USA             725000      2
+# … with 28 more rows</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="st">"investmentların sektörlere göre dağılımı"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "investmentların sektörlere göre dağılımı"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>sd21 <span class="sc">%&gt;%</span><span class="fu">group_by</span>(<span class="st">`</span><span class="at">Sector</span><span class="st">`</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">sum =</span><span class="fu">sum</span>(<span class="st">`</span><span class="at">Deal Value (USD)</span><span class="st">`</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(sum))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 45 × 2
+   Sector                         sum
+   &lt;chr&gt;                        &lt;dbl&gt;
+ 1 Ecommerce enabler       2218940063
+ 2 Delivery &amp; Logistics    1027811561
+ 3 Media                     21759000
+ 4 Energy                    21608314
+ 5 Deeptech                  16457491
+ 6 Telecom                   12250000
+ 7 Agritech                  11618700
+ 8 Education                 10933845
+ 9 Artificial intelligence    6477366
+10 Marketingtech              5090000
+# … with 35 more rows</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>sd21 <span class="sc">%&gt;%</span><span class="fu">group_by</span>(<span class="st">`</span><span class="at">Sector</span><span class="st">`</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 45 × 2
+   Sector                  count
+   &lt;chr&gt;                   &lt;int&gt;
+ 1 Gaming                     51
+ 2 SaaS                       28
+ 3 Fintech                    23
+ 4 Marketplace                17
+ 5 Healthtech                 14
+ 6 Delivery &amp; Logistics       13
+ 7 Media                      12
+ 8 Artificial intelligence    11
+ 9 Deeptech                   11
+10 Foodtech                    9
+# … with 35 more rows</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="st">"investment aşamalarının dağılımı ve grafiği"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "investment aşamalarının dağılımı ve grafiği"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>invS <span class="ot">&lt;-</span> sd21 <span class="sc">%&gt;%</span><span class="fu">group_by</span>(<span class="st">`</span><span class="at">Investment Stage</span><span class="st">`</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count))</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>invS <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>()<span class="sc">+</span> <span class="fu">geom_col</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span><span class="st">`</span><span class="at">Investment Stage</span><span class="st">`</span>, <span class="at">y=</span>count),<span class="at">fill =</span> <span class="fu">c</span>(<span class="st">"Black"</span>,<span class="st">"beige"</span>,<span class="st">"bisque3"</span>,<span class="st">"coral2"</span>)) <span class="sc">+</span><span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Investment per Investment Stage in Column Chart"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>invS <span class="ot">&lt;-</span> sd21 <span class="sc">%&gt;%</span><span class="fu">group_by</span>(<span class="st">`</span><span class="at">Investment Stage</span><span class="st">`</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count))</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>invS <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>()<span class="sc">+</span> <span class="fu">geom_col</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span><span class="st">`</span><span class="at">Investment Stage</span><span class="st">`</span>, <span class="at">y=</span>count),<span class="at">fill =</span> <span class="fu">c</span>(<span class="st">"Black"</span>,<span class="st">"beige"</span>,<span class="st">"bisque3"</span>,<span class="st">"coral2"</span>)) <span class="sc">+</span><span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Investment per Investment Stage in Column Chart"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="deneme_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="st">"investment aşamalarında toplam ne kadar para harcanmış // string gelmiş paralar onu çevirmeye çalıştım "</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="st">"investment aşamalarında toplam ne kadar para harcanmış // string gelmiş paralar onu çevirmeye çalıştım "</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "investment aşamalarında toplam ne kadar para harcanmış // string gelmiş paralar onu çevirmeye çalıştım "</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>sd21 <span class="ot">&lt;-</span> sd21 <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="st">`</span><span class="at">Deal Value (USD)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="st">`</span><span class="at">Deal Value (USD)</span><span class="st">`</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in mask$eval_all_mutate(quo): NAs introduced by coercion</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>sd21 <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(<span class="st">`</span><span class="at">Investment Stage</span><span class="st">`</span>) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">sum =</span> <span class="fu">sum</span>(<span class="st">`</span><span class="at">Deal Value (USD)</span><span class="st">`</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>sd21 <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(<span class="st">`</span><span class="at">Investment Stage</span><span class="st">`</span>) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">sum =</span> <span class="fu">sum</span>(<span class="st">`</span><span class="at">Deal Value (USD)</span><span class="st">`</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 2
   `Investment Stage`         sum
@@ -363,25 +472,11 @@ The following object is masked from 'package:readr':
 3 Later VC Stage      890000000 
 4 Seed Stage           90541970 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(sd21<span class="sc">$</span><span class="st">`</span><span class="at">Deal Value (USD)</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "numeric"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="st">"investment aşamalarına göre hisse alım oranı ortalama ne kadar//yine yüzdeler string"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="st">"investment aşamalarına göre hisse alım oranı ortalama ne kadar//yine yüzdeler string"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "investment aşamalarına göre hisse alım oranı ortalama ne kadar//yine yüzdeler string"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>sd21<span class="sc">$</span><span class="st">`</span><span class="at">Stake (%)</span><span class="st">`</span><span class="ot">&lt;-</span> <span class="fu">str_remove</span>(sd21<span class="sc">$</span><span class="st">`</span><span class="at">Stake (%)</span><span class="st">`</span>, <span class="at">pattern =</span> <span class="st">"%"</span>)</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>sd21 <span class="ot">&lt;-</span> sd21 <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="st">`</span><span class="at">Stake (%)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="st">`</span><span class="at">Stake (%)</span><span class="st">`</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in mask$eval_all_mutate(quo): NAs introduced by coercion</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(sd21<span class="sc">$</span><span class="st">`</span><span class="at">Stake (%)</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "numeric"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>sd21<span class="sc">%&gt;%</span> <span class="fu">group_by</span>(<span class="st">`</span><span class="at">Investment Stage</span><span class="st">`</span>) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">med =</span> <span class="fu">median</span>(<span class="st">`</span><span class="at">Stake (%)</span><span class="st">`</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>sd21<span class="sc">%&gt;%</span> <span class="fu">group_by</span>(<span class="st">`</span><span class="at">Investment Stage</span><span class="st">`</span>) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">med =</span> <span class="fu">median</span>(<span class="st">`</span><span class="at">Stake (%)</span><span class="st">`</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 2
   `Investment Stage`   med
@@ -391,7 +486,7 @@ The following object is masked from 'package:readr':
 3 Later VC Stage      0.46
 4 Seed Stage         10   </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>sd21 <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(<span class="st">`</span><span class="at">Investment Stage</span><span class="st">`</span>) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(<span class="st">`</span><span class="at">Stake (%)</span><span class="st">`</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>sd21 <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(<span class="st">`</span><span class="at">Investment Stage</span><span class="st">`</span>) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(<span class="st">`</span><span class="at">Stake (%)</span><span class="st">`</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 2
   `Investment Stage`  mean
@@ -401,14 +496,14 @@ The following object is masked from 'package:readr':
 3 Later VC Stage      0.46
 4 Seed Stage         29.5 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="st">"Yatırım evrelerinde yüzde kaçının yatırımcısı vardı // Financial İnvestor sütünunu sanki yatırım almadan önce yatırımcısı var mı yok mu şeklinde anladım"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="st">"Yatırım evrelerinde yüzde kaçının yatırımcısı vardı // Financial İnvestor sütünunu sanki yatırım almadan önce yatırımcısı var mı yok mu şeklinde anladım"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Yatırım evrelerinde yüzde kaçının yatırımcısı vardı // Financial İnvestor sütünunu sanki yatırım almadan önce yatırımcısı var mı yok mu şeklinde anladım"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>financial_investor <span class="ot">&lt;-</span> sd21 <span class="sc">%&gt;%</span> </span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(<span class="st">`</span><span class="at">Investment Stage</span><span class="st">`</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(<span class="at">Percent =</span> <span class="fu">label_percent</span>()(<span class="fu">sum</span>(<span class="st">`</span><span class="at">Financial Investor</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"Yes"</span>)<span class="sc">/</span><span class="fu">n</span>()))</span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(financial_investor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>financial_investor <span class="ot">&lt;-</span> sd21 <span class="sc">%&gt;%</span> </span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(<span class="st">`</span><span class="at">Investment Stage</span><span class="st">`</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(<span class="at">Percent =</span> <span class="fu">label_percent</span>()(<span class="fu">sum</span>(<span class="st">`</span><span class="at">Financial Investor</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"Yes"</span>)<span class="sc">/</span><span class="fu">n</span>()))</span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(financial_investor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 2
 # Groups:   Investment Stage [4]
@@ -419,10 +514,10 @@ The following object is masked from 'package:readr':
 3 Acquisition        40%    
 4 Later VC Stage     100%   </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sd21, <span class="fu">aes</span>(<span class="st">`</span><span class="at">Investment Stage</span><span class="st">`</span>, <span class="at">fill =</span> <span class="st">`</span><span class="at">Financial Investor</span><span class="st">`</span>)) <span class="sc">+</span> </span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">x=</span><span class="st">"İnvestment stage"</span>, <span class="at">y=</span><span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sd21, <span class="fu">aes</span>(<span class="st">`</span><span class="at">Investment Stage</span><span class="st">`</span>, <span class="at">fill =</span> <span class="st">`</span><span class="at">Financial Investor</span><span class="st">`</span>)) <span class="sc">+</span> </span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">x=</span><span class="st">"İnvestment Stage"</span>, <span class="at">y=</span><span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="deneme_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid" width="672"></p>
 </div>

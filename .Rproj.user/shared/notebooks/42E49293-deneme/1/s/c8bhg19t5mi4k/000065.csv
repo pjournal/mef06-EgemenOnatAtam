@@ -1,0 +1,4 @@
+"0",""
+"0","sd21 %>%group_by(`Sector`)%>%"
+"0","  summarize(count=n()) %>%"
+"0","  arrange(desc(count))"

@@ -1,32 +1,14 @@
----
-title: "deneme"
-output: html_document
-date: "2022-11-05"
----
-```{r}
-library(readxl)
-url <- "https://github.com/berkorbay/datasets/raw/master/startup_deals/startup_deals_2021.xlsx"
-destfile <- "sd21.xlsx"
-curl::curl_download(url, destfile)
-sd21 <- read_excel(destfile)
-
-```
-```{r}
 "Group Assignment: Startup Deals"
 library(dplyr)
 library(tidyverse)
 library(scales)
 library(ggplot2)
-sd21 <- sd21 %>% mutate(`Deal Value (USD)` = as.numeric(`Deal Value (USD)`))
-sd21$`Stake (%)`<- str_remove(sd21$`Stake (%)`, pattern = "%")
-sd21 <- sd21 %>% mutate(`Stake (%)` = as.numeric(`Stake (%)`))
 
 "Kim kaç defa yatırım yapmış"
 sd21 %>%group_by(Investor)%>%
   summarize(count=n()) %>%
   arrange(desc(count))
-
-sd21 %>% group_by(Investor)%>%
+sd21 %>%group_by(Investor)%>%
   summarize(sum =sum(`Deal Value (USD)`)) %>%
   arrange(desc(sum))
 
@@ -41,6 +23,7 @@ sd21 %>%group_by(`Investor's Origin`)%>%
 sd21 %>%group_by(`Investor's Origin`)%>%
   summarize(sum =sum(`Deal Value (USD)`,na.rm = TRUE),count=n()) %>%
   arrange(desc(count))
+
 "investmentların sektörlere göre dağılımı"
 sd21 %>%group_by(`Sector`)%>%
   summarize(sum =sum(`Deal Value (USD)`)) %>%
@@ -50,6 +33,7 @@ sd21 %>%group_by(`Sector`)%>%
   summarize(count=n()) %>%
   arrange(desc(count))
 
+
 "investment aşamalarının dağılımı ve grafiği"
 invS <- sd21 %>%group_by(`Investment Stage`)%>%
   summarize(count=n()) %>%
@@ -58,10 +42,16 @@ invS <- sd21 %>%group_by(`Investment Stage`)%>%
 invS %>% ggplot()+ geom_col(mapping = aes(x=`Investment Stage`, y=count),fill = c("Black","beige","bisque3","coral2")) +labs(title="Investment per Investment Stage in Column Chart")
 
 "investment aşamalarında toplam ne kadar para harcanmış // string gelmiş paralar onu çevirmeye çalıştım "
-
+sd21 <- sd21 %>% mutate(`Deal Value (USD)` = as.numeric(`Deal Value (USD)`))
 sd21 %>% group_by(`Investment Stage`) %>% summarize(sum = sum(`Deal Value (USD)`,na.rm=TRUE))
 
+class(sd21$`Deal Value (USD)`)
 "investment aşamalarına göre hisse alım oranı ortalama ne kadar//yine yüzdeler string"
+sd21$`Stake (%)`<- str_remove(sd21$`Stake (%)`, pattern = "%")
+
+sd21 <- sd21 %>% mutate(`Stake (%)` = as.numeric(`Stake (%)`))
+
+class(sd21$`Stake (%)`)
 
 sd21%>% group_by(`Investment Stage`) %>% summarize(med = median(`Stake (%)`,na.rm=TRUE))
 
@@ -74,9 +64,7 @@ financial_investor <- sd21 %>%
 unique(financial_investor)
 
 ggplot(sd21, aes(`Investment Stage`, fill = `Financial Investor`)) + 
-geom_bar(position = "fill") +
-labs(x="İnvestment Stage", y=NULL) +
-coord_flip()
-```
-
+  geom_bar(position = "fill") +
+  labs(x="İnvestment Stage", y=NULL) +
+  coord_flip()
 

@@ -1,0 +1,8 @@
+"0",""
+"0","""investment aşamalarında toplam ne kadar para harcanmış // string gelmiş paralar onu çevirmeye çalıştım """
+"1","[1]"
+"1"," ""investment aşamalarında toplam ne kadar para harcanmış // string gelmiş paralar onu çevirmeye çalıştım """
+"1","
+"
+"0","sd21 <- sd21 %>% mutate(`Deal Value (USD)` = as.numeric(`Deal Value (USD)`))"
+"0","sd21 %>% group_by(`Investment Stage`) %>% summarize(sum = sum(`Deal Value (USD)`,na.rm=TRUE))"
