@@ -3,7 +3,7 @@
     "path": "~/GitHub/mef06-EgemenOnatAtam/deneme.qmd",
     "project_path": "deneme.qmd",
     "type": "quarto_markdown",
-    "hash": "2430465109",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1667642911848.0,
@@ -17,11 +17,11 @@
         "scrollLine": "52"
     },
     "folds": "",
-    "lastKnownWriteTime": 1667932318,
+    "lastKnownWriteTime": 1667975491,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1667932318234,
+    "last_content_update": 1667975494431,
     "read_only": false,
     "read_only_alternatives": []
 }

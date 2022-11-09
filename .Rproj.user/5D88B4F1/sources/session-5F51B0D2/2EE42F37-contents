@@ -1,2 +1,0 @@
-library("rio")
-import("housesales.xls")

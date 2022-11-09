@@ -77,6 +77,18 @@ ggplot(sd21, aes(`Investment Stage`, fill = `Financial Investor`)) +
 geom_bar(position = "fill") +
 labs(x="İnvestment Stage", y=NULL) +
 coord_flip()
+ggplot(sd21, aes(`Investment Stage`, fill = `Financial Investor`)) +
+  # Add a bar layer
+  geom_bar(position = "dodge")
+
+ggplot(sd21, aes(`Investment Stage`, fill = `Sector`)) +
+  # Add a bar layer
+  geom_bar()
+
+ggplot(sd21, aes(`Investment Stage`, fill = `Investor's Origin`)) +
+  # Add a bar layer
+  geom_bar()
+
 ```
 
 
