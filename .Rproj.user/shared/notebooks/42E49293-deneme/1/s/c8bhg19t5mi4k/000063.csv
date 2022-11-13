@@ -1,8 +1,0 @@
-"0","""investmentların sektörlere göre dağılımı"""
-"1","[1]"
-"1"," ""investmentların sektörlere göre dağılımı"""
-"1","
-"
-"0","sd21 %>%group_by(`Sector`)%>%"
-"0","  summarize(sum =sum(`Deal Value (USD)`)) %>%"
-"0","  arrange(desc(sum))"

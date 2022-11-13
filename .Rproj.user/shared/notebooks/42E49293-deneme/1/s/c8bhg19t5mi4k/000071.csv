@@ -1,5 +1,0 @@
-"0",""
-"0","ggplot(sd21, aes(`Investment Stage`, fill = `Financial Investor`)) + "
-"0","geom_bar(position = ""fill"") +"
-"0","labs(x=""İnvestment Stage"", y=NULL) +"
-"0","coord_flip()"

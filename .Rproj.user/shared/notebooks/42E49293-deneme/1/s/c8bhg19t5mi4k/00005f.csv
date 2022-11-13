@@ -1,8 +1,0 @@
-"0","""investor yapanlar ne kadar ve nereli"""
-"1","[1]"
-"1"," ""investor yapanlar ne kadar ve nereli"""
-"1","
-"
-"0","sd21 %>%group_by(`Investor's Origin`)%>%"
-"0","  summarize(sum =sum(`Deal Value (USD)`),count=n()) %>%"
-"0","  arrange(desc(sum))"

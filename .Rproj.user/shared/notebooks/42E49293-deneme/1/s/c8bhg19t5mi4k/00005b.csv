@@ -1,4 +1,0 @@
-"0",""
-"0","sd21 %>% group_by(Investor)%>%"
-"0","  summarize(sum =sum(`Deal Value (USD)`)) %>%"
-"0","  arrange(desc(sum))"
