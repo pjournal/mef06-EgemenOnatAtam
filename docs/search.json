@@ -68,5 +68,12 @@
     "title": "3  Shiny App",
     "section": "3.3 Command Line",
     "text": "3.3 Command Line\nshiny::runGitHub(“/pjournal/mef06-EgemenOnatAtam”,subdir=“Shiny/”, ref = “gh-pages”)"
+  },
+  {
+    "objectID": "OR.html",
+    "href": "OR.html",
+    "title": "4  OR assignment",
+    "section": "",
+    "text": "6 Link\nLink For Case Study"
   }
 ]

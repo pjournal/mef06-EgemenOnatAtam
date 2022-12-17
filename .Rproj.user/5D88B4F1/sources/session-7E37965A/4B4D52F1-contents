@@ -1,0 +1,14 @@
+---
+title: "OR assignment"
+output: html_document
+date: "2022-12-17"
+---
+# Delhivery: Making the Last Mile More Efficient
+
+Delhivery is a logistics company that delivers packages in India. They handle the "last mile" of delivery, which is the final leg of the journey where a package is sorted and hand-delivered to a customer's door. This can be a complex logistical challenge because each package has its own destination, volume, weight, and due date, and must be matched with an available delivery resource that has different vehicles, carrying capacities, and routes.
+
+To automate this process, Delhivery built a solution that uses mixed integer linear programming (MILP) to create highly optimized dispatches while respecting various constraints and preferences. They chose to use the Gurobi Optimizer to solve the MILP formulations. This automatic allocation solution is now used in Delhivery's distribution centers and helps them to efficiently match packages with delivery resources, while also accounting for destination, volume, weight, due date, and driver familiarity with routes. This has allowed Delhivery to improve efficiency and continue delivering packages on schedule while minimizing costs.
+
+# Link
+
+[Link For Case Study](https://www.gurobi.com/case_studies/delhivery-making-the-last-mile-more-efficient/)
